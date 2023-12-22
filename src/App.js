@@ -50,7 +50,7 @@ function App() {
           finishGame={finishGame}
         />
       )} />
-      <Route path="/success" element={ gameFinished && (
+      <Route path="/success" element={ (
         <SuccessScreen
           userName={userName}
           score={score}

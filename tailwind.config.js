@@ -1,17 +1,37 @@
+const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./src/**/*.{html,js}'],
+  
+  important: false,
   theme: {
     colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      blue: colors.blue,
+      cyan: colors.cyan,
+      emerald: colors.emerald,
+      fuchsia: colors.fuchsia,
+      slate: colors.slate,
+      gray: colors.gray,
+      neutral: colors.neutral,
+      stone: colors.stone,
+      green: colors.green,
+      indigo: colors.indigo,
+      lime: colors.lime,
+      orange: colors.orange,
+      pink: colors.pink,
+      purple: colors.purple,
+      red: colors.red,
+      rose: colors.rose,
+      sky: colors.sky,
+      teal: colors.teal,
+      violet: colors.violet,
+      yellow: colors.amber,
+      white: colors.white,
+      gray:colors.gray,
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
@@ -27,6 +47,11 @@ module.exports = {
       }
     }
   },
+  safelist: [
+    {
+        pattern: /bg-(red|green|blue)-(100|200|300|400|500|600|700|800|900)/,
+      },
+],
   plugins: [],
 }
 
