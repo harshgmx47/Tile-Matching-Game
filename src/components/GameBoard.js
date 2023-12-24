@@ -68,7 +68,7 @@ const GameBoard = ({ userName, finishGame }) => {
 
   const handleMismatchedTiles = (id1, id2) => {
     setTimeout(() => {
-      const newTiles = updateTiles(id1, id2, { revealed: false });
+      const newTiles = updateTiles(id1, id2, { revealed: false ,matched: false});
       setTiles(newTiles);
       setScore((prevScore) => Math.max(0, prevScore - 1));
     }, 1000);
@@ -106,9 +106,9 @@ const GameBoard = ({ userName, finishGame }) => {
               <div
                 key={tile.id}
                 autoComplete="off"
-                className={`tile ${tile.matched ? 'bg-green' : 'bg-blue'} 
+                className={`tile ${tile.matched ? 'bg-green-300' : 'bg-blue-300'} 
                 ${tile.revealed ? 
-                'border-2 border-solid border-gray' : 'border-2'} 
+                'border-2 border-solid border-gray-500 bg-yellow-200' : 'border-2'} 
                 m-2 p-8 flex items-center justify-center cursor-pointer`}
                 onClick={() => {
                   if(startTime !== undefined){
@@ -146,7 +146,7 @@ const generateTiles = () => {
   return Array.from({ length: 4 }, (_, rowIndex) =>
     Array.from({ length: 8 }, (_, colIndex) => ({
       id: `${rowIndex}-${colIndex}`,
-      symbol: shuffledTiles[rowIndex * 4 + colIndex  ],
+      symbol: shuffledTiles[rowIndex * 8 + colIndex  ],
       matched: false,
       revealed: false,
       
